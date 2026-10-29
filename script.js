@@ -37,8 +37,10 @@ function initMap() {
         attributionControl: false
     }).setView(MAP_CENTER, MAP_ZOOM_DEFAULT);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+        maxNativeZoom: 16,
+        attribution: 'Sources: Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS User Community'
     }).addTo(map);
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
